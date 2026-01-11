@@ -48,12 +48,15 @@
     </header>
     <main>
       <section class="mv" id="container">
-        <div class="mv-background"></div>
+        <div class="mv-background">
+          <img src="images/mv_background.png" alt="" />
+          <img src="images/mv_background.png" alt="" />
+        </div>
         <div class="mv-left">
           <img src="images/h1.png" alt="DESIGN/CODING" />
         </div>
         <div class="mv-right">
-          <p>
+          <p class="text">
             <span>D</span>esigning <span>S</span>tructure, <br /><span>C</span
             >oding <span>E</span>xperience.
           </p>
@@ -98,9 +101,12 @@
           <a href="works4.html">
             <div class="works-content works4 fade-in">
               <div class="image-container">
-                <img src="images/works4.png" alt="チョコレート商品LPの写真" />
+                <img
+                  src="images/works4.png"
+                  alt="チョコレート商品バナーの写真"
+                />
               </div>
-              <h3>チョコレート商品のLP</h3>
+              <h3>チョコレート商品のバナー</h3>
               <h4>photoshop</h4>
             </div>
           </a>
@@ -108,9 +114,9 @@
           <a href="works5.html">
             <div class="works-content works5 fade-in">
               <div class="image-container">
-                <img src="images/works5.png" alt="フェスティバルLPの写真" />
+                <img src="images/works5.png" alt="フェスティバルバナーの写真" />
               </div>
-              <h3>アウトドアフェスティバルのLP</h3>
+              <h3>アウトドアフェスティバルのバナー</h3>
               <h4>Figma</h4>
             </div>
           </a>
@@ -129,7 +135,7 @@
       <section id="skill">
         <h2>SKILL</h2>
         <div class="skill-container">
-          <div class="skill-contain skill1">
+          <div class="skill-contain skill1 fade-in">
             <div class="image-container">
               <img src="images/vector_html.png" alt="htmlのアイコン" />
             </div>
@@ -139,7 +145,7 @@
             </div>
           </div>
 
-          <div class="skill-contain skill2">
+          <div class="skill-contain skill2 fade-in">
             <div class="image-container">
               <img
                 src="images/vector_wordpress.png"
@@ -154,7 +160,7 @@
             </div>
           </div>
 
-          <div class="skill-contain skill3">
+          <div class="skill-contain skill3 fade-in">
             <div class="image-container">
               <img src="images/javascript1.png" alt="JaveScriptのアイコン" />
             </div>
@@ -166,7 +172,7 @@
             </div>
           </div>
 
-          <div class="skill-contain skill4">
+          <div class="skill-contain skill4 fade-in">
             <div class="image-container">
               <img src="images/vector_html.png" alt="htmlのアイコン" />
             </div>
@@ -178,7 +184,7 @@
             </div>
           </div>
 
-          <div class="skill-contain skill5">
+          <div class="skill-contain skill5 fade-in">
             <div class="image-container">
               <img src="images/javascript2.png" alt="Javascriptのアイコン" />
             </div>
@@ -190,7 +196,7 @@
             </div>
           </div>
 
-          <div class="skill-contain skill6">
+          <div class="skill-contain skill6 fade-in">
             <div class="image-container">
               <img src="images/vector_adovexd.png" alt="AdoveXDのアイコン" />
             </div>
@@ -239,9 +245,8 @@
       </a>
       <div class="copy-right">&copy;Shiori Portfolio</div>
     </footer>
-    <div class="background">
-      <img class="line" src="images/line.svg" alt="装飾" />
-    </div>
+    <div class="background"></div>
+    <img class="line" src="images/line.svg" alt="装飾" />
 
     <script>
       $(function () {
@@ -300,6 +305,8 @@
       // ドキュメント読み込み後
       document.addEventListener('DOMContentLoaded', () => {
         document.body.classList.add('is-loaded');
+
+        document.querySelector('.text').style.clipPath = 'inset(0 0 0 0)';
       });
     </script>
   </body>

@@ -2,6 +2,9 @@ html {
   font-size: 16px;
   scroll-behavior: smooth;
 }
+* {
+  box-sizing: border-box;
+}
 
 body {
   color: #fff;
@@ -10,10 +13,10 @@ body {
 }
 
 h2 {
-  color: #004072;
+  color: #2f5f99;
   font-size: 2.25rem;
   position: relative;
-  padding-left: 8vw;
+  padding-left: 8%;
   position: sticky;
   top: 0;
   z-index: 9;
@@ -23,9 +26,9 @@ h2 {
 h2::after {
   content: '';
   height: 3px;
-  width: 100vw;
+  width: 100%;
   position: absolute;
-  background-color: #004072;
+  background-color: #2f5f99;
   bottom: 8px;
   left: 0;
 }
@@ -49,7 +52,7 @@ header {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
+  right: 0;
   z-index: 10;
 }
 
@@ -86,7 +89,7 @@ header .logo a {
 }
 
 .header-container nav a:hover {
-  border-bottom: #004072;
+  border-bottom: #2f5f99;
 }
 
 .header-container nav a::before {
@@ -98,24 +101,48 @@ header .logo a {
   position: absolute;
   left: 0;
   top: 0;
-  color: #004072;
+  color: #2f5f99;
 }
 
 /* mv */
 .mv {
   height: 690px;
-  width: 100vw;
+  width: 100%;
   position: relative;
 }
 
 .mv-background {
-  width: 100vw;
+  width: 100%;
   height: 213px;
   position: absolute;
   top: 50%;
+  display: flex;
   transform: translateY(-50%);
-  background: url(images/mv_background.png) no-repeat center center;
-  background-size: 100vw;
+  overflow: hidden;
+}
+
+.mv-background img {
+  width: 1200px;
+  animation: scroll 100s linear infinite;
+}
+
+.mv-background::after {
+  content: url('images/moon.png');
+  position: absolute;
+  top: 35%;
+  left: 45%;
+  z-index: 10;
+  width: 50px;
+  height: 50px;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%); /* 半分ずらしてループ */
+  }
 }
 
 .mv-left {
@@ -144,15 +171,31 @@ header .logo a {
   width: 80%;
 }
 
-.mv-right p {
-  width: 48%;
+.mv-right {
+  display: inline-block;
+  overflow: hidden;
+  max-width: 48%;
   position: absolute;
   top: 58%;
   left: 55%;
   transform: translateY(-50%);
+}
+
+.mv-right p {
+  /* max-width: 48%;
+  position: absolute;
+  top: 58%;
+  left: 55%;
+  transform: translateY(-50%); */
   font-size: 3.125rem;
   font-family: 'playfair display';
   font-style: italic;
+}
+
+.text {
+  display: inline-block;
+  clip-path: inset(0 100% 0 0);
+  transition: clip-path 1s ease 1s;
 }
 
 .mv-right span {
@@ -161,23 +204,23 @@ header .logo a {
 
 /* works */
 #works {
-  width: 100vw;
+  width: 100%;
   margin-bottom: 200px;
 }
 
 #works a {
   text-decoration: none;
+  width: 25%;
 }
 
 .works-container {
   display: flex;
-  margin: 0 8vw;
-  width: 84vw;
+  width: 84%;
+  margin: 100px auto 0 auto;
   flex-wrap: wrap;
-  column-gap: 6vw;
+  column-gap: 12.5%;
   row-gap: 60px;
-  justify-content: center;
-  margin-top: 100px;
+  /* justify-content: space-between; */
 }
 
 #works img {
@@ -218,7 +261,7 @@ header .logo a {
 }
 
 .works-content {
-  width: 20vw;
+  width: 100%;
   font-family: 'Noto Serif JP';
   font-weight: 300;
   font-size: 1rem;
@@ -243,23 +286,22 @@ header .logo a {
 
 .skill-container {
   display: flex;
-  column-gap: 9.30555556vw;
+  column-gap: 10%;
   row-gap: 100px;
   flex-wrap: wrap;
-  margin: 100px 6.94444444vw 0 6.94444444vw;
-  justify-content: center;
+  margin: 100px 8% 0 8%;
 }
 
 .skill-contain {
-  width: 36.04166667vw;
+  width: 45%;
   display: flex;
-  gap: 4.02777778vw;
+  gap: 10%;
 }
 
 .skill-container .image-container {
   border: 1px solid #fff;
-  width: 100px;
-  height: 100px;
+  width: 20%;
+  aspect-ratio: 1;
   position: relative;
 }
 
@@ -279,10 +321,10 @@ header .logo a {
 /* about */
 .about-container {
   display: flex;
-  gap: 100px;
-  padding: 0 100px 0 100px;
+  gap: 15%;
+  margin: 0 8% 0 8%;
   margin-bottom: 200px;
-  border-bottom: 3px solid #004072;
+  border-bottom: 3px solid #2f5f99;
 }
 
 .about-container .image-container {
@@ -341,8 +383,8 @@ header .logo a {
 
 /* footer */
 footer .return-to-top {
-  background-color: #004072;
-  width: 100vw;
+  background-color: #2f5f99;
+  width: 100%;
   height: 100px;
   position: relative;
   display: block;
@@ -364,11 +406,12 @@ footer .copy-right {
 .background {
   background-color: #313131;
   position: fixed;
-  z-index: -2;
-  width: 100vw;
-  height: 1500px;
+  z-index: -3;
+
   top: 0;
   left: 0;
+  right: 0;
+  bottom: 0;
 }
 
 .line {
@@ -378,16 +421,17 @@ footer .copy-right {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: -1;
+  z-index: -2;
 }
 
 /* ローディング画面 */
 #splash {
   position: fixed;
   z-index: 999;
-  width: 100%;
-  height: 100%;
-  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   background: transparent;
   text-align: center;
   color: #fff;
@@ -438,7 +482,7 @@ footer .copy-right {
 
 /* ボトムページ */
 #bottompage {
-  width: 100vw;
+  width: 100%;
 }
 
 #bottompage h2 {
@@ -452,7 +496,7 @@ footer .copy-right {
 }
 
 #bottompage .image-container {
-  width: 80vw;
+  width: 80%;
   margin: 0 auto;
   overflow: scroll;
   max-height: 80vh;
@@ -464,7 +508,7 @@ footer .copy-right {
 }
 
 #bottompage .text-container {
-  width: 80vw;
+  width: 80%;
   margin: 0 auto;
   text-align: center;
 }
@@ -474,7 +518,7 @@ footer .copy-right {
 }
 
 #bottompage .text-container a {
-  background-color: #004072;
+  background-color: #2f5f99;
   padding: 10px;
   width: fit-content;
   margin: 40px auto 80px auto;
@@ -547,15 +591,14 @@ footer .copy-right {
     margin-bottom: 100px;
   }
   .works-container {
-    margin: 0 5vw;
-    width: 90vw;
-    column-gap: 5vw;
+    margin: 0 5%;
+    width: 90%;
+    column-gap: 10%;
     row-gap: 40px;
     margin-top: 80px;
   }
-
-  .works-content {
-    width: 40vw;
+  #works a {
+    width: 45%;
   }
 
   .works-content h3 {
@@ -571,7 +614,7 @@ footer .copy-right {
     flex-direction: column;
     row-gap: 40px;
     flex-wrap: nowrap;
-    margin: 80px 5vw 0 5vw;
+    margin: 80px 5% 0 5%;
   }
 
   .skill-contain {
@@ -610,13 +653,13 @@ footer .copy-right {
 
   .about-container .text-container {
     width: auto;
-    margin: 0 5vw;
+    margin: 0 5%;
     height: 435px;
   }
 
   /* contact */
   .contact-container {
-    padding: 80px 5vw 0 5vw;
+    padding: 80px 5% 0 5%;
     margin-bottom: 100px;
   }
 
