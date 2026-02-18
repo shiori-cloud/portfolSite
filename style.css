@@ -184,7 +184,9 @@ header .logo a {
 .is-loaded .mv-left {
   opacity: 1;
   transform: translateY(-50%) scale(1);
-  transition: opacity 1s ease 1.5s, transform 1s ease 1.5s;
+  transition:
+    opacity 1s ease 1.5s,
+    transform 1s ease 1.5s;
 }
 
 .mv-left img {
@@ -513,7 +515,9 @@ footer .copy-right {
 .fade-in {
   opacity: 0;
   transform: translateY(50px);
-  transition: transform 1.5s ease 0s, opacity 1.5s ease 0s;
+  transition:
+    transform 1.5s ease 0s,
+    opacity 1.5s ease 0s;
 }
 
 .fade-in.is-visible {
@@ -530,21 +534,35 @@ footer .copy-right {
   position: static;
   text-align: center;
   margin: 100px 0 100px 0;
+  padding: 0;
 }
 
 #bottompage h2::after {
   position: static;
 }
 
-#bottompage .works.image-container {
+#bottompage .works.image-container.site {
   width: 80%;
   margin: 0 auto;
   overflow: scroll;
   max-height: 80vh;
 }
 
-#bottompage .works.image-container img {
+#bottompage .works.image-container.site img {
   width: 100%;
+  display: block;
+}
+
+#bottompage .works.image-container.banner {
+  max-width: 80%;
+  height: 300px;
+  margin: 0 auto;
+}
+
+#bottompage .works.image-container.banner img {
+  height: 100%;
+  width: fit-content;
+  margin: 0 auto;
   display: block;
 }
 
@@ -558,7 +576,7 @@ footer .copy-right {
   margin-top: 40px;
 }
 
-#bottompage .text-container a {
+#bottompage .text-container a.lineup {
   background-color: #2f5f99;
   padding: 10px;
   width: fit-content;

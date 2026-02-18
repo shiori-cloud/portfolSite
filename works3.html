@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -39,7 +39,7 @@
 
     <main>
       <h2>美容室サイト</h2>
-      <div class="image-container works">
+      <div class="image-container works site">
         <img src="images/works3.png" alt="美容室サイトの画像" />
       </div>
       <div class="text-container">
@@ -49,7 +49,9 @@
         </h3>
 
         <h3>URL</h3>
-        <h4>ここにURLを入れてください</h4>
+        <a href="http://shiori.main.jp/HairTech/"
+          ><h4>http://shiori.main.jp/HairTech/</h4></a
+        >
 
         <h3>担当</h3>
         <h4>WordPress構築</h4>
@@ -67,7 +69,7 @@
           各ページの情報が整理され、見やすい構成になるよう調整しています。
         </h4>
 
-        <a href="index.html#works">Works一覧へ</a>
+        <a class="lineup" href="index.html#works">Works一覧へ</a>
       </div>
 
       <footer>
@@ -80,7 +82,7 @@
     <div class="background">
       <img class="line" src="images/line.svg" alt="装飾" />
     </div>
-     <script>
+    <script>
       // ハンバーガーメニュー
       const hamburger = document.getElementById('hamburger-menu');
       const menu = document.getElementById('menu');
@@ -94,10 +96,7 @@
         link.addEventListener('click', () => {
           menu.classList.remove('is-open');
         });
-       });
+      });
     </script>
   </body>
 </html>
-
-
-
