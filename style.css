@@ -252,7 +252,8 @@ header .logo a {
 }
 
 #works img {
-  width: 100%;
+  width: 94%;
+  margin: 3%;
 }
 
 #works .works5 img {
@@ -300,8 +301,11 @@ header .logo a {
 }
 
 .works-content h3 {
-  margin: 20px 0;
+  margin: 20px 3%;
   color: #fff;
+}
+.works-content h4 {
+  margin: 0 3%;
 }
 
 .works-content h3:hover {
@@ -558,13 +562,13 @@ footer .copy-right {
   display: block;
 }
 
-#bottompage .works.image-container.banner {
+#bottompage .works.image-container.non-scroll {
   max-width: 80%;
   height: 300px;
   margin: 0 auto;
 }
 
-#bottompage .works.image-container.banner img {
+#bottompage .works.image-container.non-scroll img {
   height: 100%;
   width: fit-content;
   margin: 0 auto;
